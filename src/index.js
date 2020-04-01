@@ -24,5 +24,3 @@ export const todoList = new TodoList();
 // }, 1500);
 
 todoList.todos.forEach(todo => crearTodoHtml(todo));
-
-console.log('todos', todoList.todos);

@@ -1,5 +1,6 @@
 import { Todo } from "./todo.class";
 
+
 export class TodoList {
 
     constructor() {
@@ -71,8 +72,12 @@ export class TodoList {
         // JSON lo recupera como objeto y así pierde los métodos de la clase
         this.todos = this.todos.map(obj => Todo.fromJson(obj));
 
+
         // Esto se puede hacer tambien asi: this.todos = this.todos.map(Todo.fromJson);
 
     }
+
+
+
 
 }

@@ -1,17 +1,3 @@
-# Webpack Starter
+# Proyecto TODO
 
-Este es el proyecto inicial para crear aplicaciones utilizando webpack.
-
-### Notas:
-Recuerden reonstruir los modulos de Node
-...
-
-npm install
-...
-
-
-y para construir el build, recuerden:
-
-npm run build
-...
-
+Aplicación web para recordar las cosas a hacer

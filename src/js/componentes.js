@@ -8,6 +8,7 @@ const txtInput = document.querySelector('.new-todo');
 const btnBorrar = document.querySelector('.clear-completed');
 const ulFiltros = document.querySelector('.filters');
 const anchorFiltros = document.querySelectorAll('.filtro');
+const contPendientes = document.querySelector('.todo-count');
 
 export const crearTodoHtml = (todo) => {
 
@@ -25,10 +26,21 @@ export const crearTodoHtml = (todo) => {
     div.innerHTML = htmlTodo;
 
     divTodoList.append(div.firstElementChild);
+    contarPendientes();
 
     return div.firstElementChild;
 }
 
+const contarPendientes = () => {
+
+    let pendientes = 0;
+    for (let i = todoList.todos.length - 1; i >= 0; i--) {
+        if (!todoList.todos[i].completado) {
+            pendientes++;
+        }
+    }
+    contPendientes.firstChild.innerText = pendientes;
+}
 
 // Eventos
 
@@ -65,8 +77,7 @@ divTodoList.addEventListener('click', (event) => {
         divTodoList.removeChild(todoElemento); // Elimina del div HTML
 
     }
-
-
+    contarPendientes();
 
 });
 
@@ -84,6 +95,7 @@ btnBorrar.addEventListener('click', () => {
         }
 
     }
+
 
 });
 
@@ -117,6 +129,8 @@ ulFiltros.addEventListener('click', (event => {
 
 
     }
+
+
 
 
 
